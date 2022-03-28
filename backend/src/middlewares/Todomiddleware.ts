@@ -11,7 +11,7 @@ interface resTodo extends Response {
 }
 
 class TodoMiddleware {
-  async validateId (req:Request, res:resTodo, next:NextFunction) {
+  async validateId (req:Request, res:resTodo, next:NextFunction):Promise<Response> {
     const { id } = req.params
     if (!isUuid(id)) {
       return res.status(400).json({ err: 'ID inválido' })
