@@ -40,6 +40,17 @@ class TodoController {
       return res.status(500).json({ err: err.message })
     }
   }
+
+  async updateComplete (req:Request, res):Promise<Response> {
+    res.todo.complete = !res.todo.complete
+
+    try {
+      await res.todo.save()
+      return res.status(200).json(res.todo)
+    } catch (err) {
+      res.status(400).json({ error: err.message })
+    }
+  }
 }
 
 export default new TodoController()

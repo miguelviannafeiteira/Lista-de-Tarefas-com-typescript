@@ -6,5 +6,6 @@ const routes = express.Router()
 routes.get('/todos', TodoController.index)
 routes.post('/todos', TodoController.store)
 routes.delete('/todos/:id', Todomiddleware.validateId, TodoController.delete)
+routes.patch('/todos/:id', Todomiddleware.validateId, TodoController.updateComplete)
 
 export default routes
