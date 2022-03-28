@@ -31,6 +31,15 @@ class TodoController {
       res.status(400).json({ error: err.message })
     }
   }
+
+  async delete (req:Request, res) {
+    try {
+      await res.todo.remove()
+      return res.status(200).json({ message: 'Tarefa excluído com sucesso!' })
+    } catch (err) {
+      return res.status(500).json({ err: err.message })
+    }
+  }
 }
 
 export default new TodoController()
