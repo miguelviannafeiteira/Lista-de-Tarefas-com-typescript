@@ -1,8 +1,10 @@
 import styled from 'styled-components'
 
-export const TodoUl = styled.ul`
-display:flex;
-align-items:center;
+export const Container = styled.div`
+
+`
+
+export const TodoListWrapper = styled.div`
 width:153px;
 li{
   display:flex;
