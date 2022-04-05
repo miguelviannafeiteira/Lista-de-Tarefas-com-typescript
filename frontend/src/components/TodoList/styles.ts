@@ -13,3 +13,7 @@ li{
   align-items:flex;
 }
 `
+
+export const Footer = styled.footer`
+display:flex;
+`
