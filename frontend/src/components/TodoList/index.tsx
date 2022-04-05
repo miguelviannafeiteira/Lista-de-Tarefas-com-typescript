@@ -16,10 +16,8 @@ const TodoList = () => {
   useEffect(() => {
     api.get('todos').then(({ data }) => {
       setTodos(data.todos)
-      console.log(data)
-      console.log(todos)
     })
-  }, [])
+  }, [todos])
 
   return (
     <>

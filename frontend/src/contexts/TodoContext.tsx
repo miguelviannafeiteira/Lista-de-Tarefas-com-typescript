@@ -1,10 +1,38 @@
 
-import React from 'react'
+import React, { createContext, ReactNode, useState } from 'react'
 
-const TodoContext = () => {
-  return (
-    <div>TodoContext</div>
-  )
+interface TodoContextType {
+  id: string,
+  name: string,
+  complete: boolean,
+  setId:(newstate: string) => void
+  setName:(newstate: string) => void
+  setComplete:(newstate: boolean) => void
 }
 
-export default TodoContext
+interface TodoContextProps {
+  children: ReactNode
+}
+
+const initialValue = {
+  id: '',
+  name: '',
+  complete: false,
+  setId: () => {},
+  setName: () => {},
+  setComplete: () => {}
+}
+
+export const TodoContext = createContext<TodoContextType>(initialValue)
+
+export const TodoContextProvider = ({ children }: TodoContextProps) => {
+  const [id, setId] = useState(initialValue.id)
+  const [name, setName] = useState(initialValue.name)
+  const [complete, setComplete] = useState(initialValue.complete)
+
+  return (
+    <TodoContext.Provider value={{ id, setId, name, setName, complete, setComplete }}>
+      {children}
+    </TodoContext.Provider>
+  )
+}

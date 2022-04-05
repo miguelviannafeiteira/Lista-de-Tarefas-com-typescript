@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container, Button } from './styles'
 import { IoCloseOutline } from 'react-icons/io5'
+import api from '../../services/api'
 
 interface TodoApi {
   _id:string,
@@ -9,6 +10,11 @@ interface TodoApi {
 }
 
 const Todo :React.FC<TodoApi> = ({ _id, name, complete }:TodoApi) => {
+  const handleDelete = (id:string) => {
+    api.delete(`todos/${id}`)
+    console.log(id)
+  }
+
   return (
     <li>
       <Container>
@@ -16,7 +22,7 @@ const Todo :React.FC<TodoApi> = ({ _id, name, complete }:TodoApi) => {
           <input type="checkbox" />
           <label htmlFor="">{name}</label>
         </div>
-        <Button>
+        <Button onClick={() => handleDelete(_id)}>
           <IoCloseOutline/>
         </Button>
       </Container>
