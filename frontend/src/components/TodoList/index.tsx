@@ -1,8 +1,10 @@
 /* eslint-disable no-use-before-define */
 import React, { useEffect, useState } from 'react'
+import { useAxios } from '../../hook/useAxios'
 import api from '../../services/api'
+// import api from '../../services/api'
 import Todo from '../Todo'
-import { Container, TodoListWrapper } from './styles'
+import { Container, TodoListWrapper, Footer } from './styles'
 
 interface TodoApi {
   _id:string,
@@ -12,18 +14,48 @@ interface TodoApi {
 
 const TodoList = () => {
   const [todos, setTodos] = useState<TodoApi[]>([])
+  const { data, mutate } = useAxios('todos')
 
   useEffect(() => {
-    api.get('todos').then(({ data }) => {
-      setTodos(data.todos)
+    setTodos(data?.todos)
+  }, [data])
+
+  // -----------------------------------------------------------
+
+  const showAll = () => {
+    setTodos(data.todos)
+  }
+
+  const showActive = () => {
+    const filterActive = data?.todos.filter((todo:TodoApi) => {
+      return todo.complete === false
     })
-  }, [todos])
+    setTodos(filterActive)
+  }
+
+  const showCompleted = () => {
+    const filterCompleted = data?.todos.filter((todo:TodoApi) => {
+      return todo.complete
+    })
+    setTodos(filterCompleted)
+  }
+
+  // -------------------------------------------------------------
+
+  const clearCompleted = () => {
+    todos.map(todo => todo.complete ? api.delete(`todos/${todo._id}`) : todo)
+
+    const updatedTodos = {
+      todos: todos.filter((todo) => todo.complete === false)
+    }
+    mutate(updatedTodos, false)
+  }
 
   return (
     <>
     <Container>
       <TodoListWrapper>
-      {todos?.map((todo) => (
+      {todos?.map((todo:TodoApi) => (
           <Todo
           key={todo._id}
           _id={todo._id}
@@ -32,6 +64,15 @@ const TodoList = () => {
           />
       ))}
       </TodoListWrapper>
+      <Footer>
+        <p>{todos ? todos.length : 0}</p>
+        <div>
+          <button onClick={showAll}>All</button>
+          <button onClick={showActive}>Active</button>
+          <button onClick={showCompleted}>Completed</button>
+        </div>
+        <button onClick={clearCompleted}>Clear Completed</button>
+      </Footer>
     </Container>
     </>
   )

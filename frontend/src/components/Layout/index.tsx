@@ -1,6 +1,5 @@
 /* eslint-disable no-use-before-define */
 import React from 'react'
-import Footer from '../Footer'
 import Form from '../Form'
 import Header from '../Header'
 import TodoList from '../TodoList'
@@ -15,7 +14,6 @@ const Layout = () => {
           <Form/>
           <TodoList />
         </TodoContainer>
-        <Footer />
       </Container>
     </ContainerBG>
   )

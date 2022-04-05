@@ -17,7 +17,7 @@ const todoSchema = new mongoose.Schema({
   },
   complete: {
     type: Boolean,
-    default: false
+    default: true
   }
 })
 
