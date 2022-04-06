@@ -5,8 +5,13 @@
   Nesse projeto pratiquei a codificação com typescript. </p>
   <div>
     <h3>Node.js</h3>
+    <p>Criação de um API Rest</p>
     <ul>
-     <li>Express</li>
+     <li>Roteamento com o Express;</li>
+     <li>Separação de responsabilidades, por meio de arquivos e de funções de acordo com os padrôes convencionados pela comunidade;</li>
+     <li>Utilização do Insomnia para se comunicar com o backend sem um frontend estrturado, assim podendo fazer get,post e delete na API;</li>
+     <li>Métodos HTTP;</li>
+     <li>Liberação do uso do backend para o CORS.</li>
     </ul>
   <div/>
     
@@ -16,9 +21,7 @@
      <li>Consumindo um API com Axios e usando o SWR junto para uma melhor experiência do usuário;</li>
      <li>Criação e utilização de Hooks do React, para reaproveitar o código;</li>
      <li>Utilização da biblioteca Drag and drop para poder arrastar os itens;</li>
-     <li>Utilização da bibioteca clsx para mudar de classe dinamicamente;</li>
-     <li></li>
-     <li></li>
+     <li>Utilização da bibioteca clsx para mudar de classe dinamicamente.</li>
     </ul>
   <div/>
     
