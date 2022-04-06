@@ -13,7 +13,12 @@
   <div>
     <h3>React</h3>
     <ul>
-     <li>Express</li>
+     <li>Consumindo um API com Axios e usando o SWR junto para uma melhor experiência do usuário;</li>
+     <li>Criação e utilização de Hooks do React, para reaproveitar o código;</li>
+     <li>Utilização da biblioteca Drag and drop para poder arrastar os itens;</li>
+     <li>Utilização da bibioteca clsx para mudar de classe dinamicamente;</li>
+     <li></li>
+     <li></li>
     </ul>
   <div/>
     
