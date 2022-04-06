@@ -1,7 +1,11 @@
 <div>
   <h1 align="center">Sobre o Projeto</h1>
-  <p>Essa é uma aplicação web completa, utilizando no frontend React.js, com a utilização de algumas bibliotecas, e no backend Node, com
-  o framework express e banco de dados mongodb. Além de usar ambas as tecnologias com typescript</p>
+  <p> Essa é uma aplicação web completa, utilizando no frontend React.js, com a utilização de algumas bibliotecas, e no backend Node, com
+  o framework express e banco de dados mongodb. Além de usar ambas as tecnologias com typescript.
+  Nesse projeto pratiquei a codificação com typescript. </p>
+  <h3>Node.js</h3>
+  <h3>React</h3>
+  <h3>Sobre App</h3>
 </div>  
 
 <div>
