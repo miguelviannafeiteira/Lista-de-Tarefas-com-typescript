@@ -19,9 +19,8 @@
     
   <div>
     <h3>Sobre App</h3>
-    <ul>
-      <li>Express</li>
-    </ul>
+      <p>É um aplicativo para a pessoa adicionar tarefas, para se organizar, podendo arrastar as tarefas para mudar elas de posição na lista, marcar
+      elas como concluídas, excluir individualmente, excluir todas as concluídas e filtar pegando somente as ainda ativas ou somente as concluídas.</p>
   <div/>
 </div>  
 
