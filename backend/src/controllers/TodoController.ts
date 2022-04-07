@@ -21,7 +21,7 @@ class TodoController {
     const todo = new Todo({
       _id: uuid(),
       name,
-      complete: true
+      complete: false
     })
 
     try {
