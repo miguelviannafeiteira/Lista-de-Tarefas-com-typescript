@@ -3,11 +3,10 @@ import styled from 'styled-components'
 export const ContainerBG = styled.div`
 width:100%;
 height:100vh;
-background-color: black;
+background-color: #161722;
 `
 
 export const Container = styled.div`
-background-color:white;
 height:350px;
 `
 

@@ -7,9 +7,10 @@ const App = () => {
   return (
     <>
       <TodoContextProvider>
-        <Layout />
-        <GlobalStyles/>
-      </TodoContextProvider>
+          <Layout />
+          <GlobalStyles/>
+    </TodoContextProvider>
+
     </>
   )
 }
