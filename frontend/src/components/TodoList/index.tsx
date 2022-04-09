@@ -65,7 +65,7 @@ const TodoList = () => {
       ))}
       </TodoListWrapper>
       <Footer>
-        <p>{todos ? todos.length : 0}</p>
+        <p>{todos ? todos.length : 0} items left</p>
         <div>
           <button onClick={showAll}>All</button>
           <button onClick={showActive}>Active</button>

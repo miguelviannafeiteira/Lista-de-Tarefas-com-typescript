@@ -40,11 +40,13 @@ const Todo :React.FC<TodoApi> = ({ _id, name, complete }:TodoApi) => {
     <li>
       <Container>
         <TodoArea complete={complete}>
-          <input type="checkbox" id={_id} checked={complete} onChange={() => handleChangeComplete(_id)} />
-          <label htmlFor={_id}>{name}</label>
-        <Button onClick={() => handleDelete(_id)}>
-          <IoCloseOutline/>
-        </Button>
+          <div>
+            <input type="checkbox" id={_id} checked={complete} onChange={() => handleChangeComplete(_id)} />
+            <label htmlFor={_id}>{name}</label>
+          </div>
+          <Button onClick={() => handleDelete(_id)}>
+            <IoCloseOutline/>
+          </Button>
         </TodoArea>
       </Container>
     </li>
