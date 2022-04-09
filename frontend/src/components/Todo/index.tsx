@@ -1,7 +1,6 @@
 /* eslint-disable no-use-before-define */
 import React from 'react'
 import { Container, Button, TodoArea } from './styles'
-import { IoCloseOutline } from 'react-icons/io5'
 import api from '../../services/api'
 import { useAxios } from '../../hook/useAxios'
 
@@ -39,13 +38,12 @@ const Todo :React.FC<TodoApi> = ({ _id, name, complete }:TodoApi) => {
   return (
     <li>
       <Container>
-        <TodoArea complete={complete}>
+        <TodoArea>
           <div>
             <input type="checkbox" id={_id} checked={complete} onChange={() => handleChangeComplete(_id)} />
             <label htmlFor={_id}>{name}</label>
           </div>
           <Button onClick={() => handleDelete(_id)}>
-            <IoCloseOutline/>
           </Button>
         </TodoArea>
       </Container>
