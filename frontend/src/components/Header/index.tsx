@@ -1,24 +1,19 @@
 /* eslint-disable no-use-before-define */
-import React, { useContext } from 'react'
+import React from 'react'
 import { Container } from './styles'
-import Switch from 'react-js-switch'
-import { ThemeContext } from 'styled-components'
+import { IoMoonOutline, IoSunnyOutline } from 'react-icons/io5'
+import { DefaultTheme } from 'styled-components'
 
 interface Props {
-  toggleTheme(): void
+  toggleTheme(): void,
+  theme: DefaultTheme
 }
 
-const Header: React.FC<Props> = ({ toggleTheme }) => {
-  const { title } = useContext(ThemeContext)
-
+const Header: React.FC<Props> = ({ toggleTheme, theme }) => {
   return (
     <Container>
-    <div>TODO</div>
-    <Switch
-    value={title === 'light'}
-    onChange={toggleTheme}
-    size={40}
-    />
+    <h1>TODO</h1>
+    <div onClick={toggleTheme}>{theme.title === 'dark' ? <IoSunnyOutline /> : <IoMoonOutline />}</div>
     </Container>
   )
 }

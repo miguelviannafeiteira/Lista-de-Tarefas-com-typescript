@@ -2,9 +2,12 @@ export default {
   title: 'light',
 
   colors: {
-    primary: '#D62E65',
-    secondary: '#D63AF9',
-    background: '#f5f5f5',
-    text: '#333'
+    primary: 'hsl(0, 0%, 98%)',
+    secondary: 'hsl(220, 98%, 61%)',
+    background: 'hsl(236, 33%, 92%)',
+    text: 'hsl(235, 19%, 35%)'
+  },
+  images: {
+    backgroundImage: '../../bg-desktop-light.jpg'
   }
 }
