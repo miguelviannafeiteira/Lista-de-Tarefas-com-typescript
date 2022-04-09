@@ -7,7 +7,7 @@
     <h3>Node.js</h3>
     <p>Criação de um API Rest</p>
     <ul>
-     <li>Roteamento com o Express;</li>
+     <li>Roteamento com o Express</li>
      <li>Separação de responsabilidades, por meio de arquivos e de funções de acordo com os padrôes convencionados pela comunidade;</li>
      <li>Utilização do Insomnia para se comunicar com o backend sem um frontend estrturado, assim podendo fazer get,post e delete na API;</li>
      <li>Métodos HTTP;</li>
