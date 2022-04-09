@@ -3,11 +3,12 @@ export default {
 
   colors: {
     primary: 'hsl(0, 0%, 98%)',
-    secondary: 'hsl(220, 98%, 61%)',
+    secondary: '#333',
     background: 'hsl(236, 33%, 92%)',
-    text: 'hsl(235, 19%, 35%)'
+    text: 'hsl(235, 19%, 35%)',
+    hover: 'hsl(220, 98%, 61%)'
   },
   images: {
-    backgroundImage: '../../bg-desktop-light.jpg'
+    backgroundImage: '../../images/bg-desktop-light.jpg'
   }
 }

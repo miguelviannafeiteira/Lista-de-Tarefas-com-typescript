@@ -5,7 +5,7 @@ export default createGlobalStyle`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Lato', sans-serif,
+  font-family: 'Josefin Sans', sans-serif,
     sans-serif;
   text-decoration: none;
   -webkit-font-smoothing: antialiased;
