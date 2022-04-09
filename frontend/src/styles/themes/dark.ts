@@ -9,7 +9,7 @@ export default {
     hover: 'hsl(220, 98%, 61%)'
   },
   images: {
-    backgroundImage: '../../images/bg-desktop-dark.jpg'
+    backgroundImage: '/images/bg-desktop-dark.jpg'
   }
 }
 // ${props => props.theme.colors.secondary}

@@ -9,6 +9,6 @@ export default {
     hover: 'hsl(220, 98%, 61%)'
   },
   images: {
-    backgroundImage: '../../images/bg-desktop-light.jpg'
+    backgroundImage: '/images/bg-desktop-light.jpg'
   }
 }

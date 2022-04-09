@@ -78,8 +78,8 @@ width:850px;
   color: rgba(77, 80, 102, 0.5);
   text-decoration: line-through;
   }
-
-  /* input[type="checkbox"]:checked + .tasks.whiteMode {
+/* 
+  input[type="checkbox"]:checked + .tasks.whiteMode {
   color: rgba(147, 148, 165, 0.5);
   text-decoration: line-through;
   } */

@@ -18,7 +18,7 @@ const Layout = () => {
   return (
     <ThemeProvider theme={theme}>
       <ContainerBG>
-        <Container >
+        <Container theme={theme}>
           <Header toggleTheme={toggleTheme} theme={theme} />
           <TodoContainer>
             <Form/>
