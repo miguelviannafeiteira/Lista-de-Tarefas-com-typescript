@@ -1,29 +1,26 @@
 import styled from 'styled-components'
 import checked from '../../images/icon-check.svg'
+import close from '../../images/icon-cross.svg'
 
 export const Container = styled.div`
 border-bottom: 1px solid rgba(119, 122, 146, 0.3)
-
 `
 
-interface PropTypeComplete {
-  complete:boolean;
-}
-export const TodoArea = styled.div.attrs((props: PropTypeComplete) => ({
-  background: props.complete
-}))<PropTypeComplete>`
+export const TodoArea = styled.div`
+width:850px;
 
 display:flex;
 align-items:center;
 justify-content:space-between;
-width:850px;
-/* background-color:${(props) => (props.complete ? 'yellow' : 'red')} */
+padding:15px 10px 15px 10px;
  div {
   input[type=checkbox] {
   display: none;
   }
   label {
   padding-left: 70px;
+  padding-top:10px;
+  padding-bottom:10px;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -88,14 +85,15 @@ width:850px;
 `
 
 export const Button = styled.button`
-  background-color:transparent;
-  border:none;
-  cursor: pointer;
-  padding: 10px 10px 10px 0;
-svg {
-  width: 40px;
-  height: 40px;
-  color: ${props => props.theme.colors.secondary};
-}
-
+  background: url(${close});
+  background-color: #25273c;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  border: none;
+  z-index: 10;
+  cursor:pointer;
+margin:10px 10px 10px 0
 `

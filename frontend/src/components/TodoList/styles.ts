@@ -11,10 +11,15 @@ width: 850px;
     margin:0 auto 0 auto;
     display: -webkit-box;
     display: -ms-flexbox;
-    display: grid;
-    justify-self:start;
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
     background-color: ${props => props.theme.colors.primary};
     border-radius: 10px 10px 0 0;
+  div {
+    text-align:center;
+  }
   li {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -60,6 +65,9 @@ margin-right:500px;
     &:hover{
       color:${props => props.theme.colors.hover};
     }
+    &.active{
+      color:${props => props.theme.colors.hover};
+    } 
   }
 }
 

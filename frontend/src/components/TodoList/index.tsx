@@ -2,9 +2,9 @@
 import React, { useEffect, useState } from 'react'
 import { useAxios } from '../../hook/useAxios'
 import api from '../../services/api'
-// import api from '../../services/api'
 import Todo from '../Todo'
 import { Container, TodoListWrapper, Footer } from './styles'
+import cn from 'clsx'
 
 interface TodoApi {
   _id:string,
@@ -15,15 +15,18 @@ interface TodoApi {
 const TodoList = () => {
   const [todos, setTodos] = useState<TodoApi[]>([])
   const { data, mutate } = useAxios('todos')
+  const [selected, setSelected] = useState<string>('All')
 
   useEffect(() => {
     setTodos(data?.todos)
+    setSelected('All')
   }, [data])
 
   // -----------------------------------------------------------
 
   const showAll = () => {
     setTodos(data.todos)
+    setSelected('All')
   }
 
   const showActive = () => {
@@ -31,6 +34,7 @@ const TodoList = () => {
       return todo.complete === false
     })
     setTodos(filterActive)
+    setSelected('Active')
   }
 
   const showCompleted = () => {
@@ -38,6 +42,7 @@ const TodoList = () => {
       return todo.complete
     })
     setTodos(filterCompleted)
+    setSelected('Completed')
   }
 
   // -------------------------------------------------------------
@@ -56,23 +61,25 @@ const TodoList = () => {
     <Container>
       <TodoListWrapper>
         <ul>
-      {todos?.map((todo:TodoApi) => (
+      {todos?.length === 0
+        ? <div><h2>Não há tarefas.</h2></div>
+        : todos?.map((todo:TodoApi) => (
           <Todo
           key={todo._id}
           _id={todo._id}
           name={todo.name}
           complete={todo.complete}
           />
-      ))}
+        ))}
       </ul>
       </TodoListWrapper>
       <Footer>
         <div id="footer">
           <p>{todos ? todos.length : 0} items left</p>
           <div>
-            <button onClick={showAll}>All</button>
-            <button onClick={showActive}>Active</button>
-            <button onClick={showCompleted}>Completed</button>
+            <button className={cn({ active: selected === 'All' })} onClick={showAll}>All</button>
+            <button className={cn({ active: selected === 'Active' })} onClick={showActive}>Active</button>
+            <button className={cn({ active: selected === 'Completed' })} onClick={showCompleted}>Completed</button>
           </div>
           <button onClick={clearCompleted}>Clear Completed</button>
         </div>
