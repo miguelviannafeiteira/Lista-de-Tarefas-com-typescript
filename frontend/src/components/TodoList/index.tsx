@@ -55,6 +55,7 @@ const TodoList = () => {
     <>
     <Container>
       <TodoListWrapper>
+        <ul>
       {todos?.map((todo:TodoApi) => (
           <Todo
           key={todo._id}
@@ -63,15 +64,18 @@ const TodoList = () => {
           complete={todo.complete}
           />
       ))}
+      </ul>
       </TodoListWrapper>
       <Footer>
-        <p>{todos ? todos.length : 0} items left</p>
-        <div>
-          <button onClick={showAll}>All</button>
-          <button onClick={showActive}>Active</button>
-          <button onClick={showCompleted}>Completed</button>
+        <div id="footer">
+          <p>{todos ? todos.length : 0} items left</p>
+          <div>
+            <button onClick={showAll}>All</button>
+            <button onClick={showActive}>Active</button>
+            <button onClick={showCompleted}>Completed</button>
+          </div>
+          <button onClick={clearCompleted}>Clear Completed</button>
         </div>
-        <button onClick={clearCompleted}>Clear Completed</button>
       </Footer>
     </Container>
     </>
