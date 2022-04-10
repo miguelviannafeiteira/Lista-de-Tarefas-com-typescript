@@ -50,7 +50,9 @@
     <li>Hooks</li>
     <li>React Icons</li>
     <li>SWR</li>
+    <li>clsx</li>
     <li>Styled Components</li>
+    <li>Beautiful drag and drop</li>
     </ul>
     <li>Node.js</li>  
     <ul>
