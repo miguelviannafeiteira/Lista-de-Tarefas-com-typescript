@@ -76,7 +76,7 @@ const TodoList = () => {
       <Footer>
         <div id="footer">
           <p>{todos ? todos.length : 0} items left</p>
-          <div>
+          <div className='buttons'>
             <button className={cn({ active: selected === 'All' })} onClick={showAll}>All</button>
             <button className={cn({ active: selected === 'Active' })} onClick={showActive}>Active</button>
             <button className={cn({ active: selected === 'Completed' })} onClick={showCompleted}>Completed</button>

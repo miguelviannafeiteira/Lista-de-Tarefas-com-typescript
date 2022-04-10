@@ -24,5 +24,8 @@ input{
   width: 850px;
   color: ${props => props.theme.colors.secondary};
   font-size: 20px;
+  @media(max-width:875px) {
+      width:400px;
+  }
 }
 `

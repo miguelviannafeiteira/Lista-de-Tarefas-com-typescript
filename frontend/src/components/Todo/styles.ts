@@ -8,6 +8,9 @@ border-bottom: 1px solid rgba(119, 122, 146, 0.3)
 
 export const TodoArea = styled.div`
 width:850px;
+@media(max-width:875px) {
+      width:400px;
+  }
 
 display:flex;
 align-items:center;

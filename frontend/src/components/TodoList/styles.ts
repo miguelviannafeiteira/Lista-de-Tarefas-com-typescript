@@ -2,12 +2,16 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
 width:850px;
-margin:0 auto
+margin:0 auto;
+@media(max-width:875px) {
+      width:400px;
+      margin:0 auto;
+  }
 `
 
 export const TodoListWrapper = styled.div`
 ul{
-width: 850px;
+    width: 850px;
     margin:0 auto 0 auto;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -17,6 +21,7 @@ width: 850px;
     justify-content:center;
     background-color: ${props => props.theme.colors.primary};
     border-radius: 10px 10px 0 0;
+
   div {
     text-align:center;
   }
@@ -28,19 +33,21 @@ width: 850px;
     -ms-flex-pack: justify;
     justify-content: space-between;
   }
+  @media(max-width:875px) {
+      width:400px;
+  }
 }
 `
 
 export const Footer = styled.footer`
 display:block;
 width: 850px;
-margin-right:500px;
+margin:0 auto;
 #footer{
   display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     width: 850px;
-    margin: 0 auto 0 auto;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-around;
@@ -51,9 +58,8 @@ margin-right:500px;
     height: 61px;
     color: ${props => props.theme.colors.secondary};
     border-radius: 0 0 10px 10px;
-    margin: -5px 0 0 0;
     padding: 0 20px 0 20px ;
-
+    position:relative;
 
     button {
     background-color: transparent;
@@ -69,6 +75,22 @@ margin-right:500px;
       color:${props => props.theme.colors.hover};
     } 
   }
+
+  @media(max-width:875px) {
+      width:400px;
+  }
 }
 
+  @media(max-width:875px) {
+    .buttons {
+      background: ${props => props.theme.colors.primary};
+      width:400px;
+      height:61px;
+      border-radius:8px;
+      display:flex;
+      justify-content:center;
+      position:absolute;
+      top:100px;
+    }
+  }
 `

@@ -13,6 +13,9 @@ display: -webkit-box;
   padding-top: 50px;
   font-size: 26px;
   letter-spacing: 20px;
+  @media(max-width:875px) {
+      width:400px;
+  }
   div {
     cursor:pointer;
     svg{
