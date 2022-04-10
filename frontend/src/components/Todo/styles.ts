@@ -29,8 +29,7 @@ padding:15px 10px 15px 10px;
   display: -ms-flexbox;
   display: flex;
   font-size: 18px;
-  text-transform: capitalize;
-  color: #cacde8;
+  color: ${props => props.theme.colors.text};
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -61,7 +60,7 @@ padding:15px 10px 15px 10px;
 
   label::after {
   content: '';
-  border: 1px solid rgba(119, 122, 146, 0.3);
+  border: 1px solid ${props => props.theme.colors.borderColor};
   width: 28px;
   height: 28px;
   border-radius: 50%;
@@ -75,7 +74,7 @@ padding:15px 10px 15px 10px;
   }
 
   input[type="checkbox"]:checked + label {
-  color: rgba(77, 80, 102, 0.5);
+  color:  ${props => props.theme.colors.askComplete};
   text-decoration: line-through;
   }
 /* 
@@ -89,7 +88,7 @@ padding:15px 10px 15px 10px;
 
 export const Button = styled.button`
   background: url(${close});
-  background-color: #25273c;
+  background-color: transparent;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

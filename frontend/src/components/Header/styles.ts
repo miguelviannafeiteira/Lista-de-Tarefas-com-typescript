@@ -21,6 +21,10 @@ display: -webkit-box;
     svg{
       width: 30px;
       height: 30px;
+    color:${props => props.theme.colors.secondary};
     }
+  }
+  h1{
+    color:${props => props.theme.colors.title};
   }
 `

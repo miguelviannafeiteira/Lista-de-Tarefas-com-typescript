@@ -9,10 +9,13 @@ declare module 'styled-components' {
       secondary: string,
       background: string,
       text:string,
-      hover:string
+      hover:string,
+      footer: string,
+      active: string,
+      askComplete: string,
+      borderColor: string,
+      title:string,
     }
-    images: {
-    backgroundImage: string
-    }
+
   }
 }
