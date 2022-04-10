@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.div`
 width:850px;
 margin:0 auto;
+box-shadow:1px 1px 20px 5px rgba(0, 0, 0, 0.2);
 @media(max-width:875px) {
       width:400px;
       margin:0 auto;
@@ -21,7 +22,6 @@ ul{
     justify-content:center;
     background-color: ${props => props.theme.colors.primary};
     border-radius: 10px 10px 0 0;
-
   div {
     text-align:center;
   }
@@ -56,7 +56,7 @@ margin:0 auto;
     align-items: center;
     background: ${props => props.theme.colors.primary};
     height: 61px;
-    color: ${props => props.theme.colors.secondary};
+    color: ${props => props.theme.colors.footer};
     border-radius: 0 0 10px 10px;
     padding: 0 20px 0 20px ;
     position:relative;
@@ -64,7 +64,7 @@ margin:0 auto;
     button {
     background-color: transparent;
     border: none;
-    color: ${props => props.theme.colors.secondary};
+    color: ${props => props.theme.colors.footer};
     margin-right: 20px;
     font-size: 16px;
     cursor:pointer;
@@ -72,7 +72,7 @@ margin:0 auto;
       color:${props => props.theme.colors.hover};
     }
     &.active{
-      color:${props => props.theme.colors.hover};
+      color:${props => props.theme.colors.active};
     } 
   }
 

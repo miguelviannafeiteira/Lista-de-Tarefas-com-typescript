@@ -22,7 +22,7 @@ input{
   padding-left:40px;
   padding-bottom: 19px;
   width: 850px;
-  color: ${props => props.theme.colors.secondary};
+  color: ${props => props.theme.colors.text};
   font-size: 20px;
   @media(max-width:875px) {
       width:400px;
