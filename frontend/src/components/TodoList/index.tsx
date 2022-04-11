@@ -1,12 +1,14 @@
 /* eslint-disable no-use-before-define */
-import React, { useEffect, useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useAxios } from '../../hook/useAxios'
+import cn from 'clsx'
+import { DragDropContext, Draggable, Droppable, DropResult } from 'react-beautiful-dnd'
+
 import api from '../../services/api'
 import Todo from '../Todo'
 import { Container, TodoListWrapper, Footer } from './styles'
-import cn from 'clsx'
 
-interface TodoApi {
+export interface TodoApi {
   _id:string,
   name:string,
   complete:boolean
@@ -56,23 +58,51 @@ const TodoList = () => {
     mutate(updatedTodos, false)
   }
 
+  const onDragEnd = (result: DropResult) => {
+    const { source, destination } = result
+    if (!destination) return
+
+    const items = Array.from(todos)
+    const [newOrder] = items.splice(source.index, 1)
+    items.splice(destination.index, 0, newOrder)
+
+    setTodos(items)
+    console.log(todos)
+  }
+
   return (
     <>
-    <Container>
+      <Container>
       <TodoListWrapper>
-        <ul>
-      {todos?.length === 0
-        ? <div><h2>Não há tarefas.</h2></div>
-        : todos?.map((todo:TodoApi) => (
-          <Todo
-          key={todo._id}
-          _id={todo._id}
-          name={todo.name}
-          complete={todo.complete}
-          />
-        ))}
-      </ul>
-      </TodoListWrapper>
+    <DragDropContext onDragEnd={onDragEnd}>
+      <Droppable droppableId='todo'>
+        {(provided) => (
+          <div className='todos' {...provided.droppableProps} ref={provided.innerRef}>
+            {todos?.map((todo, index) => {
+              return (
+                <Draggable key={todo._id} draggableId={todo._id} index={index}>
+                  {(provided) => (
+                    <ul ref={provided.innerRef}
+                    {...provided.draggableProps}
+                    {...provided.dragHandleProps}
+                    >
+                  <Todo
+                  key={todo._id}
+                  _id={todo._id}
+                  name={todo.name}
+                  complete={todo.complete}
+                  />
+                    </ul>
+                  )}
+                </Draggable>
+              )
+            })}
+            {provided.placeholder}
+          </div>
+        )}
+      </Droppable>
+    </DragDropContext>
+    </TodoListWrapper>
       <Footer>
         <div id="footer">
           <p>{todos ? todos.length : 0} items left</p>
