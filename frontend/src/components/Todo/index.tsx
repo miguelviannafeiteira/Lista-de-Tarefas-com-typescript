@@ -4,7 +4,7 @@ import { Container, Button, TodoArea } from './styles'
 import api from '../../services/api'
 import { useAxios } from '../../hook/useAxios'
 
-interface TodoApi {
+type TodoApi = {
   _id:string,
   name:string,
   complete:boolean

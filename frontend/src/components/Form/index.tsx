@@ -3,7 +3,7 @@ import React, { FormEvent, useContext } from 'react'
 import { TodoContext } from '../../contexts/TodoContext'
 import { useAxios } from '../../hook/useAxios'
 import api from '../../services/api'
-import { FormContainer, InputGroup } from './styles'
+import { FormContainer, Input } from './styles'
 
 const Form = () => {
   const { setName, name } = useContext(TodoContext)
@@ -25,9 +25,7 @@ const Form = () => {
 
   return (
       <FormContainer onSubmit={handleSubmit}>
-        <InputGroup>
-          <input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} />
-        </InputGroup>
+          <Input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} />
       </FormContainer>
   )
 }

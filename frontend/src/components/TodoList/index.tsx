@@ -3,12 +3,11 @@ import React, { useState, useEffect } from 'react'
 import { useAxios } from '../../hook/useAxios'
 import cn from 'clsx'
 import { DragDropContext, Draggable, Droppable, DropResult } from 'react-beautiful-dnd'
-
 import api from '../../services/api'
 import Todo from '../Todo'
 import { Container, TodoListWrapper, Footer } from './styles'
 
-export interface TodoApi {
+export type TodoApi = {
   _id:string,
   name:string,
   complete:boolean
