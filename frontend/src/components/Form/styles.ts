@@ -11,8 +11,7 @@ justify-content: center;
 margin: 0 auto 30px auto;
 `
 
-export const InputGroup = styled.div`
-input{
+export const Input = styled.input`
   outline: none;
   outline: none;
   border: none;
@@ -27,5 +26,4 @@ input{
   @media(max-width:875px) {
       width:400px;
   }
-}
 `
