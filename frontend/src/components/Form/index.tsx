@@ -12,9 +12,17 @@ const Form = () => {
   const handleSubmit = (e:FormEvent) => {
     e.preventDefault()
     const todo = {
-      name
+      name,
+      complete: false
     }
     api.post('todos', todo)
+
+    // perguntar para o Leo
+    // setTodos((prev: TodoApi[]) => {
+    //   const total = { ...prev, todo }
+    //   return total
+    // })
+
     setName('')
 
     const updatedTodos = {

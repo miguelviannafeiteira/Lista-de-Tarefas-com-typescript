@@ -1,22 +1,17 @@
 /* eslint-disable no-use-before-define */
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { useAxios } from '../../hook/useAxios'
 import cn from 'clsx'
 import { DragDropContext, Draggable, Droppable, DropResult } from 'react-beautiful-dnd'
 import api from '../../services/api'
 import Todo from '../Todo'
 import { Container, TodoListWrapper, Footer } from './styles'
-
-export type TodoApi = {
-  _id:string,
-  name:string,
-  complete:boolean
-}
+import { TodoContext, TodoApi } from '../../contexts/TodoContext'
 
 const TodoList = () => {
-  const [todos, setTodos] = useState<TodoApi[]>([])
   const { data, mutate } = useAxios('todos')
   const [selected, setSelected] = useState<string>('All')
+  const { todos, setTodos } = useContext(TodoContext)
 
   useEffect(() => {
     setTodos(data?.todos)
