@@ -10,18 +10,18 @@ type TodoContextType = {
   id: string,
   name: string,
   complete: boolean,
-  todos: TodoApi[],
+  todos: Partial<TodoApi>[],
   setId:(newstate: string) => void,
   setName:(newstate: string) => void,
   setComplete:(newstate: boolean) => void,
-  setTodos:(newstate: TodoApi[]) => void
+  setTodos: React.Dispatch<React.SetStateAction<Partial<TodoApi>[]>>
 }
 
 type TodoContextProps = {
   children: ReactNode
 }
 
-const initialValue = {
+const initialValue: TodoContextType = {
   id: '',
   name: '',
   complete: false,

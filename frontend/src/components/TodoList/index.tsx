@@ -9,7 +9,7 @@ import { Container, TodoListWrapper, Footer } from './styles'
 import { TodoContext, TodoApi } from '../../contexts/TodoContext'
 
 const TodoList = () => {
-  const { data, mutate } = useAxios('todos')
+  const { data } = useAxios('todos')
   const [selected, setSelected] = useState<string>('All')
   const { todos, setTodos } = useContext(TodoContext)
 
@@ -46,10 +46,10 @@ const TodoList = () => {
 
   const clearCompleted = () => {
     todos.forEach(todo => todo.complete ? api.delete(`todos/${todo._id}`) : todo)
-    const updatedTodos = {
-      todos: todos.filter((todo) => todo.complete === false)
-    }
-    mutate(updatedTodos, false)
+    // const updatedTodos = {
+    //   todos: todos.filter((todo) => todo.complete === false)
+    // }
+    // mutate(updatedTodos, false)
   }
 
   const onDragEnd = (result: DropResult) => {
