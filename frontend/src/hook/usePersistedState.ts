@@ -19,8 +19,5 @@ export function usePersistedState<T> (key: string, initialState: T):Response<T> 
     localStorage.setItem(key, JSON.stringify(theme))
   }, [key, theme])
 
-  // const setItem = () => {
-  //   localStorage.setItem(key, JSON.stringify(state))
-  // }
   return [theme, setTheme]
 }

@@ -1,6 +1,6 @@
 /* eslint-disable no-use-before-define */
 import React, { FormEvent, useContext } from 'react'
-import { TodoContext } from '../../contexts/TodoContext'
+import { TodoApi, TodoContext } from '../../contexts/TodoContext'
 import { useAxios } from '../../hook/useAxios'
 import api from '../../services/api'
 import { FormContainer, Input } from './styles'
@@ -8,20 +8,18 @@ import { FormContainer, Input } from './styles'
 const Form = () => {
   const { setName, name } = useContext(TodoContext)
   const { data, mutate } = useAxios('todos')
+  const { setTodos } = useContext(TodoContext)
 
   const handleSubmit = (e:FormEvent) => {
     e.preventDefault()
-    const todo = {
+    const todo: Partial<TodoApi> = {
       name,
       complete: false
     }
-    api.post('todos', todo)
+    api.post('todos', todo).catch((err) => console.log(err)
+    )
 
-    // perguntar para o Leo
-    // setTodos((prev: TodoApi[]) => {
-    //   const total = { ...prev, todo }
-    //   return total
-    // })
+    setTodos((prev) => ([...prev, todo]))
 
     setName('')
 
